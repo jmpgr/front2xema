@@ -40,7 +40,7 @@
         <div id="ingresos" class="tab-pane fade active show">
             <div class="row">
                 <div class="col-6">
-                    <h2>Cuenta 1{{sumarIngresos1(movimientos1)}} €</h2>
+                    <h2>{{sumarIngresos1(movimientos1)}} € Cuenta 1</h2>
 
                     <div *ngIf="movimientos1.ingresos.length > 0; else vacio">
                         <div class="row" *ngFor='let ingreso of movimientos1.ingresos'>
@@ -53,7 +53,7 @@
                     </div>
                 </div>
                 <div class="col-6">
-                    <h2>Cuenta 2{{sumarIngresos2(movimientos2)}} €</h2>
+                    <h2>{{sumarIngresos2(movimientos2)}} € Cuenta 2</h2>
                     <div *ngIf="movimientos2.ingresos.length > 0; else vacio">
                         <div class="row" *ngFor='let ingreso of movimientos2.ingresos'>
                             <div class="col-2 mt-3"> {{ingreso.importe }} €</div>
@@ -69,7 +69,7 @@
         <div id="gastos" class="tab-pane fade">
             <div class="row">
                 <div class="col-6">
-                    <h2>Cuenta 1{{sumarGastos1(movimientos1)}} €</h2>
+                    <h2>{{sumarGastos1(movimientos1)}} € Cuenta 1</h2>
                     <div *ngIf="movimientos1.gastos.length > 0; else vacio">
                         <div class="row" *ngFor='let gasto of movimientos1.gastos'>
                             <div class="col-2 mt-3"> {{gasto.importe }} €</div>
@@ -81,7 +81,7 @@
                     </div>
                 </div>
                 <div class="col-6">
-                    <h2>Cuenta 2{{sumarGsstos2(movimientos2)}} €</h2>
+                    <h2>{{sumarGsstos2(movimientos2)}} € Cuenta 2</h2>
                     <div *ngIf="movimientos2.gastos.length > 0; else vacio">
                         <div class="row" *ngFor='let gasto of movimientos2.gastos'>
                             <div class="col-2 mt-3"> {{gasto.importe }} €</div>
