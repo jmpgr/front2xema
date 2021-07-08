@@ -1,7 +1,7 @@
 import {Component, OnInit} from '@angular/core';
 import {FormControl, FormGroup} from '@angular/forms';
 import {CuentaService} from '../service/cuenta.service';
-import {ActivatedRoute, Router} from '@angular/router';
+import {ActivatedRoute} from '@angular/router';
 import {Cuenta} from '../models/cuenta';
 import {Movimientos} from '../models/movimiento';
 import {CuentaImpl} from '../models/cuenta-impl';
@@ -24,8 +24,7 @@ export class DetalleCuentaComponent implements OnInit {
 
   constructor(private cuentasService: CuentaService,
               private movimientoService: MovimientoService,
-              private activeRoute: ActivatedRoute,
-              private router:Router) {
+              private activeRoute: ActivatedRoute) {
 
     this.movimientos = new Movimientos();
     this.cuenta = new CuentaImpl();
@@ -74,9 +73,9 @@ export class DetalleCuentaComponent implements OnInit {
 
   cargar(): void {
     this.movimientoService.cargarMovimientos(this.formData, this.cuentaId)
-      .subscribe(r => this.router.navigate(['/cuentas/', this.cuentaId])
-      );
-
+      .subscribe(r => {
+        this.ngOnInit()
+      });
   }
 
   ficheroSeleccionado(event): void {
